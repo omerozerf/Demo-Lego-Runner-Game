@@ -12,6 +12,7 @@ public class PlayerJumper : MonoBehaviour
         doubleClickListener.OnDoubleClick += OnDoubleClick;
     }
 
+
     private void OnDoubleClick()
     {
         Jump();
