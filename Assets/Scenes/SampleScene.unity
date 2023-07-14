@@ -750,7 +750,7 @@ MonoBehaviour:
   horizontalSpeed: 5
   rigidbody: {fileID: 931598765}
   joystick: {fileID: 1927168290}
-  verticalSpeed: 3
+  verticalSpeed: 7.5
 --- !u!114 &931598768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -765,6 +765,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 931598765}
   doubleClickListener: {fileID: 1927168293}
+  jumpSpeed: 30
 --- !u!114 &931598769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1145,7 +1146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c4c7c179a7897c49a0bc9070e00806c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doubleClickDuration: 0.4
+  doubleClickDuration: 0.25
 --- !u!1 &2056272243
 GameObject:
   m_ObjectHideFlags: 0

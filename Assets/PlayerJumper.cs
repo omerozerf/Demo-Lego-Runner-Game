@@ -5,7 +5,7 @@ public class PlayerJumper : MonoBehaviour
 {
     [SerializeField] private Rigidbody rigidbody;
     [SerializeField] private DoubleClickListener doubleClickListener;
-
+    [SerializeField] private float jumpSpeed;
 
     private void Start()
     {
@@ -20,7 +20,7 @@ public class PlayerJumper : MonoBehaviour
 
     private void Jump()
     {
-        print("Jump!");
+        rigidbody.AddForce(Vector3.up * jumpSpeed, ForceMode.Impulse);
     }
 
 
