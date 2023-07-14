@@ -32,5 +32,4 @@ public class DoubleClickListener : MonoBehaviour, IPointerClickHandler
         OnDoubleClick?.Invoke();
         m_Clicks = 0;
     }
-
 }
