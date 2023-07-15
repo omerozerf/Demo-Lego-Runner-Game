@@ -3,15 +3,12 @@ using UnityEngine.Serialization;
 
 public class PlayerMover : MonoBehaviour
 {
+    [SerializeField] private Player player;
     [SerializeField] private float horizontalSpeed;
     [SerializeField] private Rigidbody rigidbody;
     [SerializeField] private FloatingJoystick joystick;
     [SerializeField] private float verticalSpeed;
     
-    private void Awake()
-    {
-        rigidbody = GetComponent<Rigidbody>();
-    }
 
     private void Update()
     {
@@ -19,6 +16,11 @@ public class PlayerMover : MonoBehaviour
 
         Vector3 movement = new Vector3(moveHorizontal * horizontalSpeed, rigidbody.velocity.y, verticalSpeed);
 
+        if (player.GetPlayerCollision().IsPlayerTouchGround())
+        {
+            movement.y = 0;
+        }
+        
         rigidbody.velocity = movement;
     }
 }
