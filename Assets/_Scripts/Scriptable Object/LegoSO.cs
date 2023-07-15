@@ -1,4 +1,5 @@
 ﻿using System;
+using _Scripts.Lego;
 using UnityEngine;
 
 namespace _Scripts

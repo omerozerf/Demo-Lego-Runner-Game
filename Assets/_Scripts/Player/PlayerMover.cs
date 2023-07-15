@@ -24,8 +24,10 @@ namespace _Scripts.Player
             Vector3 movement = new Vector3(moveHorizontal * horizontalSpeed, rigidbody.velocity.y, verticalSpeed);
 
             if (player.GetPlayerCollision().IsPlayerTouchGround())
-                movement.y = 0;
-        
+            {
+                // TODO -> movement.y = 0;
+            }
+            
             rigidbody.velocity = movement;
         }
     }
