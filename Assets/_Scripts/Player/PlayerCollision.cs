@@ -21,8 +21,12 @@ namespace _Scripts.Player
             var endPos = new Vector3(position.x, position.y - height * 0.5f, position.z);
         
             CheckGround(startPos, endPos);
-            
-            
+            OverlapLego(startPos, endPos);
+        }
+
+        
+        private void OverlapLego(Vector3 startPos, Vector3 endPos)
+        {
             Collider[] legoColliderArray =
                 Physics.OverlapCapsule(startPos, endPos, capsuleCollider.radius, legoLayerMask);
 
@@ -30,16 +34,6 @@ namespace _Scripts.Player
             {
                 print(legoCollider);
             }
-        }
-
-        
-        private void CheckLego(Vector3 startPos, Vector3 endPos)
-        {
-            bool isTouchLego = Physics.CheckCapsule(startPos, endPos, capsuleCollider.radius, legoLayerMask);
-
-            m_IsPlayerTouchLego = isTouchLego;
-
-            print(m_IsPlayerTouchLego);
         }
 
 
