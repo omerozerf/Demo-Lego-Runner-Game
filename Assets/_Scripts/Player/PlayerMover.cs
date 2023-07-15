@@ -4,7 +4,7 @@ namespace _Scripts.Player
 {
     public class PlayerMover : MonoBehaviour
     {
-        [SerializeField] private global::_Scripts.Player.Player player;
+        [SerializeField] private Player player;
         [SerializeField] private float horizontalSpeed;
         [SerializeField] private new Rigidbody rigidbody;
         [SerializeField] private FloatingJoystick joystick;

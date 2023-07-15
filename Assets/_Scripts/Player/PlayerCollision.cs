@@ -4,7 +4,7 @@ namespace _Scripts.Player
 {
     public class PlayerCollision : MonoBehaviour
     {
-        [SerializeField] private global::_Scripts.Player.Player player;
+        [SerializeField] private Player player;
         [SerializeField] private CapsuleCollider capsuleCollider;
         [SerializeField] private LayerMask groundLayerMask;
         [SerializeField] private LayerMask legoLayerMask;
@@ -32,7 +32,10 @@ namespace _Scripts.Player
 
             foreach (var legoCollider in legoColliderArray)
             {
-                print(legoCollider);
+                var lego = legoCollider.GetComponentInParent<Lego.Lego>();
+
+                player.GetPlayerLegoPicker().
+                    Pick(lego, player.transform.position + new Vector3(0f, 5f, 0f), 1);
             }
         }
 

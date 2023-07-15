@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace _Scripts.Player
 {
@@ -7,6 +8,13 @@ namespace _Scripts.Player
         [SerializeField] private PlayerMover playerMover;
         [SerializeField] private PlayerJumper playerJumper;
         [SerializeField] private PlayerCollision playerCollision;
+        [SerializeField] private PlayerLegoPicker playerLegoPicker;
+
+
+        public PlayerLegoPicker GetPlayerLegoPicker()
+        {
+            return playerLegoPicker;
+        }
 
 
         public PlayerMover GetPlayerMover()
