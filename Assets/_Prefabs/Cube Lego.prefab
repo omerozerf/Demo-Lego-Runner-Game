@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6666604969560706591}
   - component: {fileID: 6666604969560706590}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube Lego Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6666604970077195299}
   - component: {fileID: 8871709350977615956}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Cube Lego
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -348,10 +348,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 931598769}
+  capsuleCollider: {fileID: 275706619}
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 64
-  capsuleCollider: {fileID: 275706619}
+  legoLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,12 +5,18 @@ public class PlayerMover : MonoBehaviour
 {
     [SerializeField] private Player player;
     [SerializeField] private float horizontalSpeed;
-    [SerializeField] private Rigidbody rigidbody;
+    [SerializeField] private new Rigidbody rigidbody;
     [SerializeField] private FloatingJoystick joystick;
     [SerializeField] private float verticalSpeed;
     
 
     private void Update()
+    {
+        Move();
+    }
+
+    
+    private void Move()
     {
         float moveHorizontal = joystick.Horizontal;
 
@@ -20,7 +26,7 @@ public class PlayerMover : MonoBehaviour
         {
             movement.y = 0;
         }
-        
+
         rigidbody.velocity = movement;
     }
 }

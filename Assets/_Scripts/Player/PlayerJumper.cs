@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerJumper : MonoBehaviour
 {
-    [SerializeField] private Rigidbody rigidbody;
+    [SerializeField] private new Rigidbody rigidbody;
     [SerializeField] private DoubleClickListener doubleClickListener;
     [SerializeField] private float jumpSpeed;
 
