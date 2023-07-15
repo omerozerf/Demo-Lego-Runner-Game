@@ -1,7 +1,7 @@
-﻿using _Scripts.UI;
+﻿using _Scripts.UIs;
 using UnityEngine;
 
-namespace _Scripts.Player
+namespace _Scripts.Players
 {
     public class PlayerJumper : MonoBehaviour
     {

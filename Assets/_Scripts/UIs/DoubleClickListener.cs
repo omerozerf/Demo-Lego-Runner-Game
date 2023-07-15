@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace _Scripts.UI
+namespace _Scripts.UIs
 {
     public class DoubleClickListener : MonoBehaviour, IPointerClickHandler 
     {

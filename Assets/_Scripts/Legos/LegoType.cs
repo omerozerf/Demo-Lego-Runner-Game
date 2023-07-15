@@ -1,4 +1,4 @@
-namespace _Scripts.Lego
+namespace _Scripts.Legos
 {
     public enum LegoType
     {

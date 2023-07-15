@@ -1,6 +1,7 @@
+using _Scripts.Legos;
 using UnityEngine;
 
-namespace _Scripts.Player
+namespace _Scripts.Players
 {
     public class PlayerCollision : MonoBehaviour
     {
@@ -32,7 +33,7 @@ namespace _Scripts.Player
 
             foreach (var legoCollider in legoColliderArray)
             {
-                var lego = legoCollider.GetComponentInParent<Lego.Lego>();
+                var lego = legoCollider.GetComponentInParent<Lego>();
 
                 player.GetPlayerLegoPicker().
                     Pick(lego, player.transform.position + new Vector3(0f, 5f, 0f), 1);

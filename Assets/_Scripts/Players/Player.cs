@@ -1,7 +1,6 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace _Scripts.Player
+namespace _Scripts.Players
 {
     public class Player : MonoBehaviour
     {

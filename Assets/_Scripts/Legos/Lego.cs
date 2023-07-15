@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace _Scripts.Lego
+namespace _Scripts.Legos
 {
     public class Lego : MonoBehaviour
     {

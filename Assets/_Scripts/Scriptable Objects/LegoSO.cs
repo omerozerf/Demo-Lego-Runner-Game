@@ -1,8 +1,8 @@
 ﻿using System;
-using _Scripts.Lego;
+using _Scripts.Legos;
 using UnityEngine;
 
-namespace _Scripts
+namespace _Scripts.Scriptable_Objects
 {
     [CreateAssetMenu]
     public class LegoSO : ScriptableObject
