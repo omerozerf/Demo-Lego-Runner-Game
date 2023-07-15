@@ -7,8 +7,6 @@ namespace _Scripts.Players
 {
     public class PlayerLegoPicker : MonoBehaviour
     {
-        [SerializeField] private Transform legoTransformParent;
-
         private List<Lego> m_LegoList = new List<Lego>();
 
 
@@ -17,8 +15,14 @@ namespace _Scripts.Players
             Transform legoTransform;
             (legoTransform = lego.transform).DOMove(targetPos, time);
             
-            legoTransform.parent = legoTransformParent;
+            legoTransform.parent = transform.parent;
             m_LegoList.Add(lego);
+        }
+
+
+        public List<Lego> GetLegoList()
+        {
+            return m_LegoList;
         }
     }
 }
