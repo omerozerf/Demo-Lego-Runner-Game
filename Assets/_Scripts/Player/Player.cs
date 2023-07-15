@@ -1,26 +1,29 @@
 ﻿using UnityEngine;
 
-public class Player : MonoBehaviour
+namespace _Scripts.Player
 {
-    [SerializeField] private PlayerMover playerMover;
-    [SerializeField] private PlayerJumper playerJumper;
-    [SerializeField] private PlayerCollision playerCollision;
-
-
-    public PlayerMover GetPlayerMover()
+    public class Player : MonoBehaviour
     {
-        return playerMover;
-    }
+        [SerializeField] private PlayerMover playerMover;
+        [SerializeField] private PlayerJumper playerJumper;
+        [SerializeField] private PlayerCollision playerCollision;
 
 
-    public PlayerJumper GetPlayerJumper()
-    {
-        return playerJumper;
-    }
+        public PlayerMover GetPlayerMover()
+        {
+            return playerMover;
+        }
 
 
-    public PlayerCollision GetPlayerCollision()
-    {
-        return playerCollision;
+        public PlayerJumper GetPlayerJumper()
+        {
+            return playerJumper;
+        }
+
+
+        public PlayerCollision GetPlayerCollision()
+        {
+            return playerCollision;
+        }
     }
 }

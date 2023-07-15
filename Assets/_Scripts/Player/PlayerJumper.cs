@@ -1,32 +1,34 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class PlayerJumper : MonoBehaviour
+namespace _Scripts.Player
 {
-    [SerializeField] private new Rigidbody rigidbody;
-    [SerializeField] private DoubleClickListener doubleClickListener;
-    [SerializeField] private float jumpSpeed;
-
-    private void Start()
+    public class PlayerJumper : MonoBehaviour
     {
-        doubleClickListener.OnDoubleClick += OnDoubleClick;
-    }
+        [SerializeField] private new Rigidbody rigidbody;
+        [SerializeField] private DoubleClickListener doubleClickListener;
+        [SerializeField] private float jumpSpeed;
+
+        private void Start()
+        {
+            doubleClickListener.OnDoubleClick += OnDoubleClick;
+        }
 
 
-    private void OnDoubleClick()
-    {
-        Jump();
-    }
+        private void OnDoubleClick()
+        {
+            Jump();
+        }
 
 
-    private void Jump()
-    {
-        rigidbody.AddForce(Vector3.up * jumpSpeed, ForceMode.Impulse);
-    }
+        private void Jump()
+        {
+            rigidbody.AddForce(Vector3.up * jumpSpeed, ForceMode.Impulse);
+        }
 
 
-    private void OnDestroy()
-    {
-        doubleClickListener.OnDoubleClick -= OnDoubleClick;
+        private void OnDestroy()
+        {
+            doubleClickListener.OnDoubleClick -= OnDoubleClick;
+        }
     }
 }
