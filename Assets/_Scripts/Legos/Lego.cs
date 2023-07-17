@@ -6,7 +6,10 @@ namespace _Scripts.Legos
     public class Lego : MonoBehaviour
     {
         [SerializeField] private LegoType legoType;
-        [SerializeField] private float followSpeed;
+        [SerializeField] private float xSpeed;
+        [SerializeField] private float zSpeed;
+        [SerializeField] private float ySpeed;
+        
         
         
         public void UpdateLegoPosition(Transform followedCube, bool isFollowStart)
@@ -22,9 +25,14 @@ namespace _Scripts.Legos
                 yield return new WaitForEndOfFrame();
                 
                 var position = transform.position;
-                position = new Vector3(Mathf.Lerp(position.x, followedLego.position.x, followSpeed * Time.deltaTime),
-                    position.y,
-                    Mathf.Lerp(position.z, followedLego.position.z, followSpeed * Time.deltaTime));
+                var followedLegoPosition = followedLego.position;
+                
+                position = 
+                    new Vector3(
+                    x: Mathf.Lerp(position.x, followedLegoPosition.x, xSpeed * Time.deltaTime),
+                    y: position.y,
+                    z: Mathf.Lerp(position.z, followedLegoPosition.z, zSpeed * Time.deltaTime)
+                    );
                 
                 transform.position = position;
             }

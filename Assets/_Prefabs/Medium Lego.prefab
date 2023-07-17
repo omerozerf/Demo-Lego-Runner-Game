@@ -46,7 +46,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   legoType: 1
-  followSpeed: 5
+  xSpeed: 2
+  zSpeed: 50
+  ySpeed: 10
 --- !u!1 &5601404930830909291
 GameObject:
   m_ObjectHideFlags: 0
