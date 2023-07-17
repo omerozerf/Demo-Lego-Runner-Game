@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 
 namespace _Scripts.UIs
 {
-    public class DoubleClickListener : MonoBehaviour, IPointerClickHandler 
+    public class DoubleClickListener : MonoBehaviour, IPointerDownHandler 
     {
         [Tooltip ("Duration between 2 clicks in seconds")]
         [Range (0.01f, 0.5f)] public float doubleClickDuration = 0.4f ;
@@ -15,7 +15,7 @@ namespace _Scripts.UIs
         private int m_Clicks;
 
 
-        public void OnPointerClick (PointerEventData eventData) 
+        public void OnPointerDown (PointerEventData eventData) 
         {
             if (m_Clicks <= 0)
             {
