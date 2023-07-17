@@ -92,6 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   legoType: 0
+  followSpeed: 5
 --- !u!1 &6716943079809354280
 GameObject:
   m_ObjectHideFlags: 0

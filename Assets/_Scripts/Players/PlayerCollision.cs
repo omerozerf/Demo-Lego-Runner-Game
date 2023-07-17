@@ -33,10 +33,7 @@ namespace _Scripts.Players
 
             foreach (var legoCollider in legoColliderArray)
             {
-                var lego = legoCollider.GetComponentInParent<Lego>();
-
-                player.GetPlayerLegoPicker().
-                    Pick(lego, player.transform.position + new Vector3(0f, 5f, 0f), 1);
+                player.GetPlayerLegoPicker().Pick(legoCollider);
             }
         }
 
