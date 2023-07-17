@@ -12,7 +12,6 @@ namespace _Scripts.Legos
         [SerializeField] private float gap;
         
         
-        
         public void UpdateLegoPosition(Transform followedCube, bool isFollowStart)
         {
             StartCoroutine(StartFollowingToLastLegoPosition(followedCube, isFollowStart));
