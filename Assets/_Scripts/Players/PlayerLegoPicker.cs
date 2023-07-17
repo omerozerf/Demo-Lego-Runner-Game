@@ -1,8 +1,6 @@
 using System.Collections.Generic;
 using _Scripts.Legos;
-using DG.Tweening;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace _Scripts.Players
 {
