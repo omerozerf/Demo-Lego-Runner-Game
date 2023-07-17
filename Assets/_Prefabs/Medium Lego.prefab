@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   legoType: 1
-  xSpeed: 2
+  xSpeed: 7.5
   zSpeed: 50
   ySpeed: 10
 --- !u!1 &5601404930830909291
