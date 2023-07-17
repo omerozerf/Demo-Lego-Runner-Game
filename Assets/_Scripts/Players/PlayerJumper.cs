@@ -5,6 +5,7 @@ namespace _Scripts.Players
 {
     public class PlayerJumper : MonoBehaviour
     {
+        [SerializeField] private Player player;
         [SerializeField] private new Rigidbody rigidbody;
         [SerializeField] private DoubleClickListener doubleClickListener;
         [SerializeField] private float jumpSpeed;
@@ -17,7 +18,8 @@ namespace _Scripts.Players
 
         private void OnDoubleClick()
         {
-            Jump();
+            if (player.GetPlayerCollision().IsPlayerTouchGround())
+                Jump();
         }
 
 

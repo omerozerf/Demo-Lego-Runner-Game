@@ -93,8 +93,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   legoType: 0
   xSpeed: 7.5
-  zSpeed: 50
-  ySpeed: 10
+  zSpeed: 1000
+  ySpeed: 30
+  gap: 0.15
 --- !u!1 &6716943079809354280
 GameObject:
   m_ObjectHideFlags: 0

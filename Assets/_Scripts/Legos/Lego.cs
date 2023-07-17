@@ -9,6 +9,7 @@ namespace _Scripts.Legos
         [SerializeField] private float xSpeed;
         [SerializeField] private float zSpeed;
         [SerializeField] private float ySpeed;
+        [SerializeField] private float gap;
         
         
         
@@ -27,10 +28,12 @@ namespace _Scripts.Legos
                 var position = transform.position;
                 var followedLegoPosition = followedLego.position;
                 
+                followedLegoPosition.y = followedLegoPosition.y + gap;
+                
                 position = 
                     new Vector3(
                     x: Mathf.Lerp(position.x, followedLegoPosition.x, xSpeed * Time.deltaTime),
-                    y: position.y,
+                    y: Mathf.Lerp(position.y, followedLegoPosition.y, ySpeed * Time.deltaTime),
                     z: Mathf.Lerp(position.z, followedLegoPosition.z, zSpeed * Time.deltaTime)
                     );
                 
