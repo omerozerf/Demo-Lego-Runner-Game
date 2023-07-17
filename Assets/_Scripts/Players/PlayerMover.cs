@@ -16,7 +16,7 @@ namespace _Scripts.Players
             Move();
         }
 
-    
+
         private void Move()
         {
             float moveHorizontal = joystick.Horizontal;

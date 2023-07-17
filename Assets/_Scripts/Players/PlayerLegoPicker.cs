@@ -22,6 +22,7 @@ namespace _Scripts.Players
         public void Pick(Collider other)
         {
             Lego lego = other.GetComponentInParent<Lego>();
+            
             m_LegoList.Add(lego);
             if (m_LegoList.Count == 1)
             {
