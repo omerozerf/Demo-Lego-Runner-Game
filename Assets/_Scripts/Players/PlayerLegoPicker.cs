@@ -9,6 +9,7 @@ namespace _Scripts.Players
     public class PlayerLegoPicker : MonoBehaviour
     {
         [SerializeField] private float speed;
+        [SerializeField] private float horizontalGap;
         
         private float m_XMove;
         private float m_ZMove;
@@ -31,17 +32,18 @@ namespace _Scripts.Players
                 
                 lego.gameObject.transform.position = m_CurrentLegoPos;
                 
-                m_CurrentLegoPos = new Vector3(legoPosition.x, transform.position.y + 0.3f,
+                m_CurrentLegoPos = new Vector3(legoPosition.x, transform.position.y + horizontalGap,
                     legoPosition.z);
                 
                 lego.gameObject.GetComponentInParent<Lego>().UpdateLegoPosition(transform, true);
             }
+            
             else if (m_LegoList.Count > 1)
             {
                 lego.gameObject.transform.position = m_CurrentLegoPos;
 
                 var legoPosition = lego.transform.position;
-                m_CurrentLegoPos = new Vector3(legoPosition.x, lego.gameObject.transform.position.y + 0.3f,
+                m_CurrentLegoPos = new Vector3(legoPosition.x, lego.gameObject.transform.position.y + horizontalGap,
                     legoPosition.z);
                 
                 lego.gameObject.GetComponentInParent<Lego>()
