@@ -22,7 +22,7 @@ namespace _Scripts.Legos
 
             while (isFollowStart)
             {
-                yield return new WaitForEndOfFrame();
+                yield return new WaitForFixedUpdate();
                 
                 var position = transform.position;
                 var followedLegoPosition = followedLego.position;
