@@ -11,6 +11,7 @@ namespace _Scripts.Players
         [SerializeField] private Transform smallBrokenLegoPrefab;
         [SerializeField] private Transform mediumBrokenLegoPrefab;
         [SerializeField] private Transform largeBrokenLegoPrefab;
+        [SerializeField] private Transform brokenLegosParent;
 
 
         private void Update()
@@ -32,24 +33,24 @@ namespace _Scripts.Players
                 case LegoType.Small:
                 {
                     Destroy(
-                        Instantiate(smallBrokenLegoPrefab, lastLego.transform.position, Quaternion.identity)
-                            .gameObject, 3f);
+                        Instantiate(smallBrokenLegoPrefab, lastLego.transform.position, Quaternion.identity,
+                            brokenLegosParent).gameObject, 3f);
                     break;
                 }
                         
                 case LegoType.Medium:
                 {
                     Destroy(
-                        Instantiate(mediumBrokenLegoPrefab, lastLego.transform.position, Quaternion.identity)
-                            .gameObject, 3f);
+                        Instantiate(mediumBrokenLegoPrefab, lastLego.transform.position, Quaternion.identity,
+                            brokenLegosParent).gameObject, 3f);
                     break;
                 }
                         
                 case LegoType.Large:
                 {
                     Destroy(
-                        Instantiate(largeBrokenLegoPrefab, lastLego.transform.position, Quaternion.identity)
-                            .gameObject, 3f);
+                        Instantiate(largeBrokenLegoPrefab, lastLego.transform.position, Quaternion.identity,
+                            brokenLegosParent).gameObject, 3f);
                     break;
                 }
                 default:
