@@ -34,7 +34,7 @@ namespace _Scripts.Players
                 {
                     Destroy(
                         Instantiate(smallBrokenLegoPrefab, lastLego.transform.position, Quaternion.identity,
-                            brokenLegosParent).gameObject, 3f);
+                            brokenLegosParent).gameObject, 5f);
                     break;
                 }
                         
@@ -42,7 +42,7 @@ namespace _Scripts.Players
                 {
                     Destroy(
                         Instantiate(mediumBrokenLegoPrefab, lastLego.transform.position, Quaternion.identity,
-                            brokenLegosParent).gameObject, 3f);
+                            brokenLegosParent).gameObject, 5f);
                     break;
                 }
                         
@@ -50,7 +50,7 @@ namespace _Scripts.Players
                 {
                     Destroy(
                         Instantiate(largeBrokenLegoPrefab, lastLego.transform.position, Quaternion.identity,
-                            brokenLegosParent).gameObject, 3f);
+                            brokenLegosParent).gameObject, 5f);
                     break;
                 }
                 default:
