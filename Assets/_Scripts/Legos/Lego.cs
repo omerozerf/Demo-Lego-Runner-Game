@@ -6,6 +6,7 @@ namespace _Scripts.Legos
     {
         [SerializeField] private LegoFollower legoFollower;
         [SerializeField] private Transform legoPrefab;
+        [SerializeField] private BrokenLego brokenLego;
 
 
         public LegoFollower GetLegoFollower()
@@ -17,6 +18,12 @@ namespace _Scripts.Legos
         public Transform GetLegoPrefab()
         {
             return legoPrefab;
+        }
+
+
+        public BrokenLego GetBrokenLego()
+        {
+            return brokenLego;
         }
     }
 }
