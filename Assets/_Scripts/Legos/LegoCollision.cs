@@ -1,4 +1,5 @@
 ﻿using System;
+using _Scripts.Players;
 using UnityEngine;
 
 namespace _Scripts.Legos
@@ -25,6 +26,9 @@ namespace _Scripts.Legos
                 Physics.CheckBox(center, halfSize, boxCollider.transform.rotation, obstacleLayerMask);
 
             m_IsLegoTouchObstacle = isTouchObstacle;
+
+            if (m_IsLegoTouchObstacle) 
+                PlayerLegoBreaker.Instance.BreakLego();
         }
 
 

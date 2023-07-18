@@ -7,6 +7,8 @@ namespace _Scripts.Players
 {
     public class PlayerLegoBreaker : MonoBehaviour
     {
+        public static PlayerLegoBreaker Instance;
+        
         [SerializeField] private Player player;
         [SerializeField] private Transform smallBrokenLegoPrefab;
         [SerializeField] private Transform mediumBrokenLegoPrefab;
@@ -14,20 +16,37 @@ namespace _Scripts.Players
         [SerializeField] private Transform brokenLegosParent;
 
 
+        private void Awake()
+        {
+            Instance = this;
+        }
+
+
         private void Update()
+        {
+            TryBreakLego();
+        }
+
+        
+        private void TryBreakLego()
         {
             if (player.GetPlayerLegoPicker().GetLegoList().Count <= 0 ||
                 !player.GetPlayerCollision().IsPlayerTouchObstacle())
                 return;
-            
-            InstantiateDelay();
-            
+
+            BreakLego();
+        }
+
+        
+        public void BreakLego()
+        {
             var legoList = player.GetPlayerLegoPicker().GetLegoList();
             var lastLego = legoList[^1];
-                
+
             lastLego.gameObject.SetActive(false);
             legoList.Remove(lastLego);
-
+            
+            
             switch (lastLego.GetLegoType())
             {
                 case LegoType.Small:
@@ -37,7 +56,7 @@ namespace _Scripts.Players
                             brokenLegosParent).gameObject, 5f);
                     break;
                 }
-                        
+
                 case LegoType.Medium:
                 {
                     Destroy(
@@ -45,7 +64,7 @@ namespace _Scripts.Players
                             brokenLegosParent).gameObject, 5f);
                     break;
                 }
-                        
+
                 case LegoType.Large:
                 {
                     Destroy(
@@ -53,6 +72,7 @@ namespace _Scripts.Players
                             brokenLegosParent).gameObject, 5f);
                     break;
                 }
+                
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -67,7 +87,7 @@ namespace _Scripts.Players
 
         private IEnumerator InstantiateDelayCoroutine()
         {
-            yield return new WaitForEndOfFrame();
+            yield return new WaitForSeconds(10f);
         }
     }
 }
