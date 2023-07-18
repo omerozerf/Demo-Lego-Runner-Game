@@ -25,8 +25,6 @@ namespace _Scripts.Legos
                 Physics.CheckBox(center, halfSize, boxCollider.transform.rotation, obstacleLayerMask);
 
             m_IsLegoTouchObstacle = isTouchObstacle;
-
-            print(m_IsLegoTouchObstacle);
         }
 
 
