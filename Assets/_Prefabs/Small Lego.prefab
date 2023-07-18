@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2395917611249186098}
   - component: {fileID: 3627833045660435562}
+  - component: {fileID: 5433744323343351826}
   m_Layer: 7
   m_Name: Small Lego Collider
   m_TagString: Untagged
@@ -46,6 +47,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.9914801, y: 0.4051121, z: 0.48860508}
   m_Center: {x: 0.015654922, y: 0.067838155, z: 0.005218327}
+--- !u!114 &5433744323343351826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6043381609022358657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f0a79ca3ca04d438ddb98011989d0cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  boxCollider: {fileID: 3627833045660435562}
 --- !u!1 &6103072326627353396
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,7 +109,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c81bf97dc52d5c44f813ab97f453790b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  legoType: 0
   xSpeed: 7.5
   zSpeed: 1000
   ySpeed: 30
@@ -109,9 +125,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 490585d0c4044b2b992e871bc7575889, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  legoType: 0
   legoFollower: {fileID: 3882039222846062374}
   legoPrefab: {fileID: 1588938785173049114}
-  brokenLego: {fileID: 0}
 --- !u!1 &6716943079809354280
 GameObject:
   m_ObjectHideFlags: 0

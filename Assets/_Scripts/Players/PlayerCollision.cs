@@ -65,6 +65,8 @@ namespace _Scripts.Players
             Collider[] legoColliderArray =
                 Physics.OverlapCapsule(startPos, endPos, capsuleCollider.radius, legoLayerMask);
 
+            if (!(legoColliderArray.Length > 0)) return;
+            
             foreach (var legoCollider in legoColliderArray)
             {
                 player.GetPlayerLegoPicker().Pick(legoCollider);

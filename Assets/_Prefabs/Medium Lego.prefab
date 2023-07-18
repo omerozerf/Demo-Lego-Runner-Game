@@ -75,6 +75,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7791183162990358424}
   - component: {fileID: 5588897555211243478}
+  - component: {fileID: 2145520333090416768}
   m_Layer: 7
   m_Name: Medium Lego Collider
   m_TagString: Untagged
@@ -111,6 +112,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0268469, y: 0.6420355, z: 1.0178982}
   m_Center: {x: -0.0044745207, y: 0.07159288, z: -0.000000059604645}
+--- !u!114 &2145520333090416768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5601404930830909291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f0a79ca3ca04d438ddb98011989d0cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  boxCollider: {fileID: 5588897555211243478}
 --- !u!1 &6140598776992434666
 GameObject:
   m_ObjectHideFlags: 0

@@ -289,7 +289,7 @@ PrefabInstance:
     - target: {fileID: 1297059710382324610, guid: 47bba42819d7bd4488c68cb82a4d706f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1297059710382324610, guid: 47bba42819d7bd4488c68cb82a4d706f,
         type: 3}
@@ -309,7 +309,7 @@ PrefabInstance:
     - target: {fileID: 1297059710382324610, guid: 47bba42819d7bd4488c68cb82a4d706f,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9659259
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1297059710382324610, guid: 47bba42819d7bd4488c68cb82a4d706f,
         type: 3}
@@ -319,7 +319,7 @@ PrefabInstance:
     - target: {fileID: 1297059710382324610, guid: 47bba42819d7bd4488c68cb82a4d706f,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.2588192
+      value: 0.000000014901161
       objectReference: {fileID: 0}
     - target: {fileID: 1297059710382324610, guid: 47bba42819d7bd4488c68cb82a4d706f,
         type: 3}
@@ -334,7 +334,7 @@ PrefabInstance:
     - target: {fileID: 1297059710382324610, guid: 47bba42819d7bd4488c68cb82a4d706f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 30
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1297059710382324610, guid: 47bba42819d7bd4488c68cb82a4d706f,
         type: 3}
@@ -345,6 +345,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Large Lego (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2328630411748076344, guid: 47bba42819d7bd4488c68cb82a4d706f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4841619398615615266, guid: 47bba42819d7bd4488c68cb82a4d706f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47bba42819d7bd4488c68cb82a4d706f, type: 3}
@@ -904,10 +914,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Medium Lego
       objectReference: {fileID: 0}
+    - target: {fileID: 4214753265516046981, guid: 7908a4365b8c03f44a737213a1a016a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6596590100839917346, guid: 7908a4365b8c03f44a737213a1a016a0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6596590100839917346, guid: 7908a4365b8c03f44a737213a1a016a0,
         type: 3}
@@ -1763,7 +1778,7 @@ PrefabInstance:
     - target: {fileID: 1297059710382324610, guid: 47bba42819d7bd4488c68cb82a4d706f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1297059710382324610, guid: 47bba42819d7bd4488c68cb82a4d706f,
         type: 3}
@@ -1819,6 +1834,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Large Lego
+      objectReference: {fileID: 0}
+    - target: {fileID: 2328630411748076344, guid: 47bba42819d7bd4488c68cb82a4d706f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47bba42819d7bd4488c68cb82a4d706f, type: 3}
