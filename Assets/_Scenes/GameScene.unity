@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 155401273}
   m_Layer: 6
   m_Name: Ground Collider
-  m_TagString: Ground
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1326,6 +1326,38 @@ MonoBehaviour:
   playerJumper: {fileID: 931598768}
   playerCollision: {fileID: 275706620}
   playerLegoPicker: {fileID: 818430912}
+--- !u!1 &935641558
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 935641559}
+  m_Layer: 0
+  m_Name: ----------------------------------------------------------------------------------------------------------------------------------
+    (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &935641559
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935641558}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1293422560
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1869,6 +1901,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c4c7c179a7897c49a0bc9070e00806c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1929106392
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1929106393}
+  m_Layer: 0
+  m_Name: Obstacles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1929106393
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929106392}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2133617594788721792}
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1999567532
 GameObject:
   m_ObjectHideFlags: 0
@@ -2071,12 +2135,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &2133617594788721792 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5697158458693389379, guid: bd25d12668407da4e8ab35f12908a26f,
+    type: 3}
+  m_PrefabInstance: {fileID: 5948268343456676035}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5948268343456676035
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1929106393}
     m_Modifications:
     - target: {fileID: 4925688682812823289, guid: bd25d12668407da4e8ab35f12908a26f,
         type: 3}
@@ -2086,7 +2156,7 @@ PrefabInstance:
     - target: {fileID: 5697158458693389379, guid: bd25d12668407da4e8ab35f12908a26f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5697158458693389379, guid: bd25d12668407da4e8ab35f12908a26f,
         type: 3}
