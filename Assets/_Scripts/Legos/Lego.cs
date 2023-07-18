@@ -4,10 +4,10 @@ namespace _Scripts.Legos
 {
     public class Lego : MonoBehaviour
     {
+        [SerializeField] private LegoType legoType;
         [SerializeField] private LegoFollower legoFollower;
         [SerializeField] private Transform legoPrefab;
-        [SerializeField] private BrokenLego brokenLego;
-
+        
 
         public LegoFollower GetLegoFollower()
         {
@@ -20,10 +20,9 @@ namespace _Scripts.Legos
             return legoPrefab;
         }
 
-
-        public BrokenLego GetBrokenLego()
+        public LegoType GetLegoType()
         {
-            return brokenLego;
+            return legoType;
         }
     }
 }

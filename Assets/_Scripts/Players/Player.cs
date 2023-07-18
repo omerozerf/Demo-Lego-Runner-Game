@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace _Scripts.Players
 {
@@ -8,6 +9,7 @@ namespace _Scripts.Players
         [SerializeField] private PlayerJumper playerJumper;
         [SerializeField] private PlayerCollision playerCollision;
         [SerializeField] private PlayerLegoPicker playerLegoPicker;
+        [SerializeField] private PlayerLegoBreaker playerLegoBreaker;
 
 
         public PlayerLegoPicker GetPlayerLegoPicker()
@@ -31,6 +33,12 @@ namespace _Scripts.Players
         public PlayerCollision GetPlayerCollision()
         {
             return playerCollision;
+        }
+
+
+        public PlayerLegoBreaker GetPlayerLegoBreaker()
+        {
+            return playerLegoBreaker;
         }
     }
 }

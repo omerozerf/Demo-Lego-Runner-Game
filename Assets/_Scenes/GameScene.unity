@@ -1224,25 +1224,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &917547317 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2723122303944830340, guid: bd25d12668407da4e8ab35f12908a26f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1881459263}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &917547321
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 917547317}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 2}
-  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &931598764
 GameObject:
   m_ObjectHideFlags: 0
@@ -1256,6 +1237,7 @@ GameObject:
   - component: {fileID: 931598769}
   - component: {fileID: 931598767}
   - component: {fileID: 931598768}
+  - component: {fileID: 931598770}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1345,6 +1327,26 @@ MonoBehaviour:
   playerJumper: {fileID: 931598768}
   playerCollision: {fileID: 275706620}
   playerLegoPicker: {fileID: 818430912}
+  playerLegoBreaker: {fileID: 0}
+--- !u!114 &931598770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 931598764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48e4b0cd0ffd4b63894e28873ffd0561, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 931598769}
+  smallBrokenLegoPrefab: {fileID: 7038190121207948238, guid: 65e27b11e6683a14aa38428514fdcbc7,
+    type: 3}
+  mediumBrokenLegoPrefab: {fileID: 7685045573455998544, guid: df5ea8c72d2ca904486a950cac27cc78,
+    type: 3}
+  largeBrokenLegoPrefab: {fileID: 567484998417769182, guid: 449d9aebbaf1a274f90870955f73d14c,
+    type: 3}
 --- !u!1 &935641558
 GameObject:
   m_ObjectHideFlags: 0

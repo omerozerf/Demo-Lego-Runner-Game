@@ -5,7 +5,6 @@ namespace _Scripts.Legos
 {
     public class LegoFollower : MonoBehaviour
     {
-        [SerializeField] private LegoType legoType;
         [SerializeField] private float xSpeed;
         [SerializeField] private float zSpeed;
         [SerializeField] private float ySpeed;

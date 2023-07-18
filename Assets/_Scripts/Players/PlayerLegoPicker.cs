@@ -55,5 +55,11 @@ namespace _Scripts.Players
                 }
             }
         }
+
+
+        public List<Lego> GetLegoList()
+        {
+            return m_LegoList;
+        }
     }
 }
