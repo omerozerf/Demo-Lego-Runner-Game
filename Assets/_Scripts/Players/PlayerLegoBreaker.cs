@@ -27,19 +27,25 @@ namespace _Scripts.Players
                 {
                     case LegoType.Small:
                     {
-                        Instantiate(smallBrokenLegoPrefab, lastLego.transform.position, Quaternion.identity);
+                        Destroy(
+                            Instantiate(smallBrokenLegoPrefab, lastLego.transform.position, Quaternion.identity)
+                                .gameObject, 3f);
                         break;
                     }
                         
                     case LegoType.Medium:
                     {
-                        Instantiate(mediumBrokenLegoPrefab, lastLego.transform.position, Quaternion.identity);
+                        Destroy(
+                            Instantiate(mediumBrokenLegoPrefab, lastLego.transform.position, Quaternion.identity)
+                                .gameObject, 3f);
                         break;
                     }
                         
                     case LegoType.Large:
                     {
-                        Instantiate(largeBrokenLegoPrefab, lastLego.transform.position, Quaternion.identity);
+                        Destroy(
+                            Instantiate(largeBrokenLegoPrefab, lastLego.transform.position, Quaternion.identity)
+                                .gameObject, 3f);
                         break;
                     }
                     default:
