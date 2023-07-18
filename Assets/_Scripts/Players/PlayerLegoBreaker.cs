@@ -61,11 +61,11 @@ namespace _Scripts.Players
 
         private void InstantiateDelay()
         {
-            StartCoroutine(InstansiateDelayCoroutine());
+            StartCoroutine(InstantiateDelayCoroutine());
         }
         
 
-        private IEnumerator InstansiateDelayCoroutine()
+        private IEnumerator InstantiateDelayCoroutine()
         {
             yield return new WaitForEndOfFrame();
         }
