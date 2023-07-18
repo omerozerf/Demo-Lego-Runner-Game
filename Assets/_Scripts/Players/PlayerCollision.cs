@@ -9,10 +9,11 @@ namespace _Scripts.Players
         [SerializeField] private CapsuleCollider capsuleCollider;
         [SerializeField] private LayerMask groundLayerMask;
         [SerializeField] private LayerMask legoLayerMask;
+        [SerializeField] private LayerMask obstacleLayerMask;
     
         private bool m_IsPlayerTouchGround;
-        private bool m_IsPlayerTouchLego;
-    
+        private bool m_IsPlayerTouchObstacle;
+
 
         private void Update()
         {
@@ -22,7 +23,26 @@ namespace _Scripts.Players
             var endPos = new Vector3(position.x, position.y - height * 0.5f, position.z);
         
             CheckGround(startPos, endPos);
+            CheckObstacle(startPos, endPos);
             OverlapLego(startPos, endPos);
+        }
+
+        
+        private void CheckObstacle(Vector3 startPos, Vector3 endPos)
+        {
+            bool isTouchObstacle = Physics.CheckCapsule(startPos, endPos, capsuleCollider.radius, obstacleLayerMask);
+
+            m_IsPlayerTouchObstacle = isTouchObstacle;
+            
+            print(m_IsPlayerTouchObstacle);
+        }
+        
+
+        private void CheckGround(Vector3 startPos, Vector3 endPos)
+        {
+            bool isTouchGround = Physics.CheckCapsule(startPos, endPos, capsuleCollider.radius, groundLayerMask);
+
+            m_IsPlayerTouchGround = isTouchGround;
         }
 
         
@@ -37,15 +57,7 @@ namespace _Scripts.Players
             }
         }
 
-
-        private void CheckGround(Vector3 startPos, Vector3 endPos)
-        {
-            bool isTouchGround = Physics.CheckCapsule(startPos, endPos, capsuleCollider.radius, groundLayerMask);
-
-            m_IsPlayerTouchGround = isTouchGround;
-        }
-
-
+        
         public bool IsPlayerTouchGround()
         {
             return m_IsPlayerTouchGround;

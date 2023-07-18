@@ -64,6 +64,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   legoFollower: {fileID: -7872492275349515395}
+  legoPrefab: {fileID: 6596590100839917346}
 --- !u!1 &5601404930830909291
 GameObject:
   m_ObjectHideFlags: 0
