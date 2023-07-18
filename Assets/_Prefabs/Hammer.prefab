@@ -207,7 +207,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5697158458693389379}
   - component: {fileID: 5231746889252903999}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Hammer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +262,7 @@ GameObject:
   - component: {fileID: 1411481388429307737}
   - component: {fileID: 622242894026887958}
   - component: {fileID: 6375749365801041038}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Cylinder.048
   m_TagString: Untagged
   m_Icon: {fileID: 0}

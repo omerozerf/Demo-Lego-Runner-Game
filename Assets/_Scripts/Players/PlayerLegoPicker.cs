@@ -6,8 +6,6 @@ namespace _Scripts.Players
 {
     public class PlayerLegoPicker : MonoBehaviour
     {
-        // [SerializeField] private float horizontalGap;
-        
         private float m_XMove;
         private float m_ZMove;
         private Vector3 m_FirstLegoPos;

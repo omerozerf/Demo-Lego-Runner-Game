@@ -1,3 +1,4 @@
+using System;
 using _Scripts.Legos;
 using UnityEngine;
 
@@ -19,22 +20,35 @@ namespace _Scripts.Players
         {
             var position = transform.position;
             var height = capsuleCollider.height;
-            var startPos = new Vector3(position.x, position.y + height * 0.5f, position.z);
-            var endPos = new Vector3(position.x, position.y - height * 0.5f, position.z);
+            var radius = capsuleCollider.radius;
+            var startPos = new Vector3(position.x, position.y - radius + height, position.z);
+            var endPos = new Vector3(position.x, position.y + radius, position.z);
         
             CheckGround(startPos, endPos);
             CheckObstacle(startPos, endPos);
             OverlapLego(startPos, endPos);
         }
 
-        
+        private void OnDrawGizmosSelected()
+        {
+            var position = transform.position;
+            var height = capsuleCollider.height;
+            var radius = capsuleCollider.radius;
+            var startPos = new Vector3(position.x, position.y - radius + height, position.z);
+            var endPos = new Vector3(position.x, position.y + radius, position.z);
+            
+            Gizmos.color = Color.red;
+            Gizmos.DrawSphere(startPos, 0.25f);
+            Gizmos.color = Color.blue;
+            Gizmos.DrawSphere(endPos, 0.25f);
+        }
+
+
         private void CheckObstacle(Vector3 startPos, Vector3 endPos)
         {
             bool isTouchObstacle = Physics.CheckCapsule(startPos, endPos, capsuleCollider.radius, obstacleLayerMask);
 
             m_IsPlayerTouchObstacle = isTouchObstacle;
-            
-            print(m_IsPlayerTouchObstacle);
         }
         
 
@@ -61,6 +75,12 @@ namespace _Scripts.Players
         public bool IsPlayerTouchGround()
         {
             return m_IsPlayerTouchGround;
+        }
+
+
+        public bool IsPlayerTouchObstacle()
+        {
+            return m_IsPlayerTouchObstacle;
         }
     }
 }
