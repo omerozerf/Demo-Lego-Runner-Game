@@ -19,36 +19,37 @@ namespace _Scripts.Players
         // ReSharper disable Unity.PerformanceAnalysis
         public void Pick(Collider legoCollider)
         {
-            Lego lego = legoCollider.GetComponentInParent<Lego>();
+            Lego legoFollower = legoCollider.GetComponentInParent<Lego>();
             
-            m_LegoList.Add(lego);
+            m_LegoList.Add(legoFollower);
             switch (m_LegoList.Count)
             {
                 case 1:
                 {
                     m_FirstLegoPos = m_LegoList[0].GetComponentInChildren<MeshRenderer>().bounds.max;
 
-                    var legoPosition = lego.transform.position;
+                    var legoPosition = legoFollower.transform.position;
                     m_CurrentLegoPos = new Vector3(legoPosition.x, transform.position.y, legoPosition.z);
                 
-                    lego.gameObject.transform.position = m_CurrentLegoPos;
+                    legoFollower.gameObject.transform.position = m_CurrentLegoPos;
                 
                     m_CurrentLegoPos = new Vector3(legoPosition.x, transform.position.y,
                         legoPosition.z);
                 
-                    lego.gameObject.GetComponentInParent<Lego>().UpdateLegoPosition(transform, true);
+                    legoFollower.gameObject.GetComponentInParent<Lego>().GetLegoFollower()
+                        .UpdateLegoPosition(transform, true);
                     break;
                 }
                 
                 case > 1:
                 {
-                    lego.gameObject.transform.position = m_CurrentLegoPos;
+                    legoFollower.gameObject.transform.position = m_CurrentLegoPos;
 
-                    var legoPosition = lego.transform.position;
-                    m_CurrentLegoPos = new Vector3(legoPosition.x, lego.gameObject.transform.position.y,
+                    var legoPosition = legoFollower.transform.position;
+                    m_CurrentLegoPos = new Vector3(legoPosition.x, legoFollower.gameObject.transform.position.y,
                         legoPosition.z);
                 
-                    lego.gameObject.GetComponentInParent<Lego>()
+                    legoFollower.gameObject.GetComponentInParent<Lego>().GetLegoFollower()
                         .UpdateLegoPosition(m_LegoList[m_LegoListIndexCounter].transform, true);
                 
                     m_LegoListIndexCounter++;

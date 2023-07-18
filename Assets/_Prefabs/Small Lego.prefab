@@ -56,6 +56,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1588938785173049114}
   - component: {fileID: 3882039222846062374}
+  - component: {fileID: -740323870392073426}
   m_Layer: 0
   m_Name: Small Lego
   m_TagString: Untagged
@@ -96,6 +97,19 @@ MonoBehaviour:
   zSpeed: 1000
   ySpeed: 30
   gap: 0.15
+--- !u!114 &-740323870392073426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6103072326627353396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 490585d0c4044b2b992e871bc7575889, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  legoFollower: {fileID: 3882039222846062374}
 --- !u!1 &6716943079809354280
 GameObject:
   m_ObjectHideFlags: 0
