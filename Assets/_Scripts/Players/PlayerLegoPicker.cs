@@ -52,9 +52,7 @@ namespace _Scripts.Players
 
                     var legoPosition = lego.transform.position;
                     m_CurrentLegoPos = new Vector3(legoPosition.x, transform.position.y, legoPosition.z);
-
-                    lego.gameObject.transform.position = m_CurrentLegoPos;
-
+                    
                     m_CurrentLegoPos = new Vector3(legoPosition.x, transform.position.y,
                         legoPosition.z);
 
@@ -67,8 +65,6 @@ namespace _Scripts.Players
 
                 case > 1:
                 {
-                    lego.gameObject.transform.position = m_CurrentLegoPos;
-
                     var legoPosition = lego.transform.position;
                     m_CurrentLegoPos = new Vector3(legoPosition.x, lego.gameObject.transform.position.y,
                         legoPosition.z);
