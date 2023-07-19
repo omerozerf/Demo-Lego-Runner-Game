@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using _Scripts.Legos;
 using UnityEngine;
@@ -6,6 +7,10 @@ namespace _Scripts.Players
 {
     public class PlayerLegoPicker : MonoBehaviour
     {
+        public static PlayerLegoPicker Instance { get; private set; }
+
+        public static event EventHandler OnLegoPicked;
+
         private float m_XMove;
         private float m_ZMove;
         private Vector3 m_FirstLegoPos;
@@ -14,43 +19,56 @@ namespace _Scripts.Players
         private int m_LegoListIndexCounter = 0;
 
 
+        private void Awake()
+        {
+            Instance = this;
+        }
+
+
         // ReSharper disable Unity.PerformanceAnalysis
         public void Pick(Collider legoCollider)
         {
-            Lego legoFollower = legoCollider.GetComponentInParent<Lego>();
+            Lego lego = legoCollider.GetComponentInParent<Lego>();
+
+            if (!lego.CanPickable()) return;
             
-            m_LegoList.Add(legoFollower);
+            m_LegoList.Add(lego);
+            lego.SetCanPickable(false);
+            
             switch (m_LegoList.Count)
             {
                 case 1:
                 {
                     m_FirstLegoPos = m_LegoList[0].GetComponentInChildren<MeshRenderer>().bounds.max;
 
-                    var legoPosition = legoFollower.transform.position;
+                    var legoPosition = lego.transform.position;
                     m_CurrentLegoPos = new Vector3(legoPosition.x, transform.position.y, legoPosition.z);
-                
-                    legoFollower.gameObject.transform.position = m_CurrentLegoPos;
-                
+
+                    lego.gameObject.transform.position = m_CurrentLegoPos;
+
                     m_CurrentLegoPos = new Vector3(legoPosition.x, transform.position.y,
                         legoPosition.z);
-                
-                    legoFollower.gameObject.GetComponentInParent<Lego>().GetLegoFollower()
+
+                    lego.gameObject.GetComponentInParent<Lego>().GetLegoFollower()
                         .UpdateLegoPosition(transform, true);
+
+                    OnLegoPicked?.Invoke(this, EventArgs.Empty);
                     break;
                 }
-                
+
                 case > 1:
                 {
-                    legoFollower.gameObject.transform.position = m_CurrentLegoPos;
+                    lego.gameObject.transform.position = m_CurrentLegoPos;
 
-                    var legoPosition = legoFollower.transform.position;
-                    m_CurrentLegoPos = new Vector3(legoPosition.x, legoFollower.gameObject.transform.position.y,
+                    var legoPosition = lego.transform.position;
+                    m_CurrentLegoPos = new Vector3(legoPosition.x, lego.gameObject.transform.position.y,
                         legoPosition.z);
-                
-                    legoFollower.gameObject.GetComponentInParent<Lego>().GetLegoFollower()
+
+                    lego.gameObject.GetComponentInParent<Lego>().GetLegoFollower()
                         .UpdateLegoPosition(m_LegoList[m_LegoListIndexCounter].transform, true);
-                
+
                     m_LegoListIndexCounter++;
+                    OnLegoPicked?.Invoke(this, EventArgs.Empty);
                     break;
                 }
             }
