@@ -1,4 +1,5 @@
 using System;
+using DG.Tweening;
 using UnityEngine;
 
 namespace _Scripts.Players
@@ -60,7 +61,14 @@ namespace _Scripts.Players
 
         private void Fly()
         {
-            print("Fly!");
+            
+        }
+
+
+        public void GetOnAirPlane(Vector3 targetPos)
+        {
+            player.transform.DOMove(targetPos, 1f);
+            print("Bin!");
         }
 
 

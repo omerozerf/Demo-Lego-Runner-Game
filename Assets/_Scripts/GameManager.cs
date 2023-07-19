@@ -55,9 +55,9 @@ namespace _Scripts
             var currentLarge = 0;
 
             
-            textArray[0].text = $"{currentSmall}/{m_TotalSmallLego}";
-            textArray[1].text = $"{currentMedium}/{m_TotalMediumLego}";
-            textArray[2].text = $"{currentLarge}/{m_TotalLargeLego}";
+            textArray[0].text = $"S: {currentSmall}/{m_TotalSmallLego}";
+            textArray[1].text = $"M: {currentMedium}/{m_TotalMediumLego}";
+            textArray[2].text = $"L: {currentLarge}/{m_TotalLargeLego}";
 
             foreach (var lego in legoList)
             {
@@ -65,17 +65,17 @@ namespace _Scripts
                 {
                     case LegoType.Small:
                         currentSmall++;
-                        textArray[0].text = $"{currentSmall}/{m_TotalSmallLego}";
+                        textArray[0].text = $"S: {currentSmall}/{m_TotalSmallLego}";
 
                         break;
                     case LegoType.Medium:
                         currentMedium++;
-                        textArray[1].text = $"{currentMedium}/{m_TotalMediumLego}";
+                        textArray[1].text = $"M: {currentMedium}/{m_TotalMediumLego}";
 
                         break;
                     case LegoType.Large:
                         currentLarge++;
-                        textArray[2].text = $"{currentLarge}/{m_TotalLargeLego}";
+                        textArray[2].text = $"L: {currentLarge}/{m_TotalLargeLego}";
 
                         break;
                     default:

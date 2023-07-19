@@ -43,6 +43,7 @@ namespace _Scripts.Players
             foreach (var airplaneCollider in airplaneColliderArray)
             {
                 player.GetPlayerMover().SetPlayerMoveType(PlayerMoveType.Fly);
+                player.GetPlayerMover().GetOnAirPlane(airplaneCollider.transform.position);
             }
         }
 
