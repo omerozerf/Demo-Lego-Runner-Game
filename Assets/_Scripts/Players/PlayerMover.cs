@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace _Scripts.Players
@@ -9,15 +10,40 @@ namespace _Scripts.Players
         [SerializeField] private new Rigidbody rigidbody;
         [SerializeField] private FloatingJoystick joystick;
         [SerializeField] private float verticalSpeed;
-    
 
-        private void Update()
+
+        private PlayerMoveType m_PlayerMoveType;
+
+
+        private void Start()
         {
-            Move();
+            m_PlayerMoveType = PlayerMoveType.Run;
         }
 
 
-        private void Move()
+        private void Update()
+        {
+            switch (GetPlayerMoveType())
+            {
+                case PlayerMoveType.Run:
+                {
+                    Run();
+                    
+                    break;
+                }
+                case PlayerMoveType.Fly:
+                {
+                    Fly();
+                    
+                    break;
+                }
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        }
+
+
+        private void Run()
         {
             float moveHorizontal = joystick.Horizontal;
 
@@ -29,6 +55,24 @@ namespace _Scripts.Players
             }
             
             rigidbody.velocity = movement;
+        }
+
+
+        private void Fly()
+        {
+            print("Fly!");
+        }
+
+
+        public PlayerMoveType GetPlayerMoveType()
+        {
+            return m_PlayerMoveType;
+        }
+
+
+        public void SetPlayerMoveType(PlayerMoveType playerMoveType)
+        {
+            m_PlayerMoveType = playerMoveType;
         }
     }
 }

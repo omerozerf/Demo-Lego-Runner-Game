@@ -11,7 +11,8 @@ namespace _Scripts.Players
         [SerializeField] private LayerMask groundLayerMask;
         [SerializeField] private LayerMask legoLayerMask;
         [SerializeField] private LayerMask obstacleLayerMask;
-    
+        [SerializeField] private LayerMask airPlaneLayerMask;
+        
         private bool m_IsPlayerTouchGround;
         private bool m_IsPlayerTouchObstacle;
 
@@ -26,21 +27,23 @@ namespace _Scripts.Players
         
             CheckGround(startPos, endPos);
             CheckObstacle(startPos, endPos);
+            
             OverlapLego(startPos, endPos);
+            OverlapAirplane(startPos, endPos);
         }
 
-        private void OnDrawGizmosSelected()
+        
+        private void OverlapAirplane(Vector3 startPos, Vector3 endPos)
         {
-            var position = transform.position;
-            var height = capsuleCollider.height;
-            var radius = capsuleCollider.radius;
-            var startPos = new Vector3(position.x, position.y - radius + height, position.z);
-            var endPos = new Vector3(position.x, position.y + radius, position.z);
-            
-            Gizmos.color = Color.red;
-            Gizmos.DrawSphere(startPos, 0.25f);
-            Gizmos.color = Color.blue;
-            Gizmos.DrawSphere(endPos, 0.25f);
+            Collider[] airplaneColliderArray =
+                Physics.OverlapCapsule(startPos, endPos, capsuleCollider.radius, airPlaneLayerMask);
+
+            if (!(airplaneColliderArray.Length > 0)) return;
+
+            foreach (var airplaneCollider in airplaneColliderArray)
+            {
+                player.GetPlayerMover().SetPlayerMoveType(PlayerMoveType.Fly);
+            }
         }
 
 

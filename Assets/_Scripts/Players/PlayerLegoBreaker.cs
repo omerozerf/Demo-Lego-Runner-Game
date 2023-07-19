@@ -60,7 +60,7 @@ namespace _Scripts.Players
                     OnLegoBroken?.Invoke(this, EventArgs.Empty);
                     break;
                 }
-
+                
                 case LegoType.Medium:
                 {
                     Destroy(

@@ -66,19 +66,17 @@ namespace _Scripts
                     case LegoType.Small:
                         currentSmall++;
                         textArray[0].text = $"{currentSmall}/{m_TotalSmallLego}";
-                        print("Small!");
-                        break;
 
+                        break;
                     case LegoType.Medium:
                         currentMedium++;
                         textArray[1].text = $"{currentMedium}/{m_TotalMediumLego}";
-                        print("Medium!");
-                        break;
 
+                        break;
                     case LegoType.Large:
                         currentLarge++;
                         textArray[2].text = $"{currentLarge}/{m_TotalLargeLego}";
-                        print("Large!");
+
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();
