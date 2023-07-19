@@ -67,7 +67,7 @@ namespace _Scripts.Players
 
         public void GetOnAirPlane(Vector3 targetPos)
         {
-            player.transform.DOMove(targetPos, 1f);
+            player.transform.DOMove(targetPos, 0.5f);
             print("Bin!");
         }
 
