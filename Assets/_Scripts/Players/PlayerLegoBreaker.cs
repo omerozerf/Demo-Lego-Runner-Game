@@ -85,17 +85,5 @@ namespace _Scripts.Players
                     throw new ArgumentOutOfRangeException();
             }
         }
-
-
-        private void InstantiateDelay()
-        {
-            StartCoroutine(InstantiateDelayCoroutine());
-        }
-        
-
-        private IEnumerator InstantiateDelayCoroutine()
-        {
-            yield return new WaitForSeconds(10f);
-        }
     }
 }
