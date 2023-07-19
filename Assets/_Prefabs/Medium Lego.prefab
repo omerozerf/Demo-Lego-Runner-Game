@@ -49,7 +49,7 @@ MonoBehaviour:
   xSpeed: 7.5
   zSpeed: 1000
   ySpeed: 30
-  gap: 0.15
+  gap: 0.5
 --- !u!114 &-4123567034793737910
 MonoBehaviour:
   m_ObjectHideFlags: 0

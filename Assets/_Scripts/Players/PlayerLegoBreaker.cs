@@ -7,7 +7,9 @@ namespace _Scripts.Players
 {
     public class PlayerLegoBreaker : MonoBehaviour
     {
-        public static PlayerLegoBreaker Instance;
+        public static PlayerLegoBreaker Instance { get; private set; }
+        
+        public static event EventHandler OnLegoBroken;
         
         [SerializeField] private Player player;
         [SerializeField] private Transform smallBrokenLegoPrefab;
@@ -54,6 +56,8 @@ namespace _Scripts.Players
                     Destroy(
                         Instantiate(smallBrokenLegoPrefab, lastLego.transform.position, Quaternion.identity,
                             brokenLegosParent).gameObject, 5f);
+                    
+                    OnLegoBroken?.Invoke(this, EventArgs.Empty);
                     break;
                 }
 
@@ -62,6 +66,8 @@ namespace _Scripts.Players
                     Destroy(
                         Instantiate(mediumBrokenLegoPrefab, lastLego.transform.position, Quaternion.identity,
                             brokenLegosParent).gameObject, 5f);
+                    
+                    OnLegoBroken?.Invoke(this, EventArgs.Empty);
                     break;
                 }
 
@@ -70,6 +76,8 @@ namespace _Scripts.Players
                     Destroy(
                         Instantiate(largeBrokenLegoPrefab, lastLego.transform.position, Quaternion.identity,
                             brokenLegosParent).gameObject, 5f);
+                    
+                    OnLegoBroken?.Invoke(this, EventArgs.Empty);
                     break;
                 }
                 

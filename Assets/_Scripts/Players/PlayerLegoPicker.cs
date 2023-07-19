@@ -8,7 +8,7 @@ namespace _Scripts.Players
     public class PlayerLegoPicker : MonoBehaviour
     {
         public static PlayerLegoPicker Instance { get; private set; }
-
+        
         public static event EventHandler OnLegoPicked;
 
         private float m_XMove;
@@ -22,6 +22,15 @@ namespace _Scripts.Players
         private void Awake()
         {
             Instance = this;
+        }
+
+
+        private void Update()
+        {
+            if (m_LegoList.Count > 0)
+            {
+                m_LegoListIndexCounter = GetLegoList().Count - 1;
+            }
         }
 
 
@@ -67,7 +76,6 @@ namespace _Scripts.Players
                     lego.gameObject.GetComponentInParent<Lego>().GetLegoFollower()
                         .UpdateLegoPosition(m_LegoList[m_LegoListIndexCounter].transform, true);
 
-                    m_LegoListIndexCounter++;
                     OnLegoPicked?.Invoke(this, EventArgs.Empty);
                     break;
                 }
