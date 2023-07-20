@@ -1,5 +1,6 @@
 ﻿using System;
 using _Scripts.UIs;
+using DG.Tweening;
 using UnityEngine;
 
 namespace _Scripts.Players
@@ -29,7 +30,13 @@ namespace _Scripts.Players
                     break;
                 case PlayerMoveType.Fly:
                 {
-                    print("Fly double click!");
+                    player.transform.DORotate(new Vector3(0, 0, 179f), 0.5f).OnComplete((() =>
+                    {
+                        player.transform.DORotate(new Vector3(0, 0, 359f), 0.5f).OnComplete((() =>
+                        {
+                            player.transform.rotation = Quaternion.Euler(Vector3.zero);
+                        }));
+                    }));
                 }
                     break;
                 default:
