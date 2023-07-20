@@ -10,6 +10,7 @@ namespace _Scripts.Players
         [SerializeField] private PlayerCollision playerCollision;
         [SerializeField] private PlayerLegoPicker playerLegoPicker;
         [SerializeField] private PlayerLegoBreaker playerLegoBreaker;
+        [SerializeField] private new Rigidbody rigidbody;
 
 
         public PlayerLegoPicker GetPlayerLegoPicker()
@@ -39,6 +40,12 @@ namespace _Scripts.Players
         public PlayerLegoBreaker GetPlayerLegoBreaker()
         {
             return playerLegoBreaker;
+        }
+
+
+        public Rigidbody GetPlayerRigidbody()
+        {
+            return rigidbody;
         }
     }
 }

@@ -1,17 +1,20 @@
 using System;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace _Scripts.Players
 {
     public class PlayerMover : MonoBehaviour
     {
         [SerializeField] private Player player;
-        [SerializeField] private float horizontalSpeed;
         [SerializeField] private new Rigidbody rigidbody;
         [SerializeField] private FloatingJoystick joystick;
-        [SerializeField] private float verticalSpeed;
-
+        [SerializeField] private float horizontalRunSpeed;
+        [SerializeField] private float verticalRunSpeed;
+        [SerializeField] private float moveFlySpeed;
+        [SerializeField] private float verticalFlySpeed;
+        [SerializeField] private float horizontalFlySpeed;
 
         private PlayerMoveType m_PlayerMoveType;
 
@@ -46,9 +49,9 @@ namespace _Scripts.Players
 
         private void Run()
         {
-            float moveHorizontal = joystick.Horizontal;
+            float horizontalDirection = joystick.Horizontal;
 
-            Vector3 movement = new Vector3(moveHorizontal * horizontalSpeed, rigidbody.velocity.y, verticalSpeed);
+            Vector3 movement = new Vector3(horizontalDirection * horizontalRunSpeed, rigidbody.velocity.y, verticalRunSpeed);
 
             if (player.GetPlayerCollision().IsPlayerTouchGround())
             {
@@ -61,14 +64,20 @@ namespace _Scripts.Players
 
         private void Fly()
         {
-            
+            float horizontalDirection = joystick.Horizontal;
+            float verticalDirection = joystick.Vertical;
+            var movement = new Vector3(horizontalDirection * horizontalFlySpeed, verticalDirection * verticalFlySpeed,
+                moveFlySpeed);
+
+            rigidbody.velocity = movement;
         }
 
 
         public void GetOnAirPlane(Vector3 targetPos)
         {
-            player.transform.DOMove(targetPos, 0.5f);
-            print("Bin!");
+            // player.transform.DOMove(targetPos, 0.5f);
+            player.transform.DOJump(targetPos, 5f, 1, 1f);
+            player.GetPlayerRigidbody().useGravity = false;
         }
 
 

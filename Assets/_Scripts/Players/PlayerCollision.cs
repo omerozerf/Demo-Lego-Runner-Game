@@ -1,5 +1,6 @@
 using System;
 using _Scripts.Legos;
+using General;
 using UnityEngine;
 
 namespace _Scripts.Players
@@ -33,6 +34,7 @@ namespace _Scripts.Players
         }
 
         
+        // ReSharper disable Unity.PerformanceAnalysis
         private void OverlapAirplane(Vector3 startPos, Vector3 endPos)
         {
             Collider[] airplaneColliderArray =
@@ -44,6 +46,15 @@ namespace _Scripts.Players
             {
                 player.GetPlayerMover().SetPlayerMoveType(PlayerMoveType.Fly);
                 player.GetPlayerMover().GetOnAirPlane(airplaneCollider.transform.position);
+
+                var airplane = airplaneCollider.GetComponentInParent<Airplane>();
+
+                LazyCoroutines.WaitForSeconds(1.01f, () =>
+                {
+                    airplane.transform.parent = player.transform;
+                }); 
+                
+                airplaneCollider.enabled = false;
             }
         }
 
