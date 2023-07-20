@@ -1,9 +1,10 @@
-﻿using _Scripts.UIs;
+﻿using System;
+using _Scripts.UIs;
 using UnityEngine;
 
 namespace _Scripts.Players
 {
-    public class PlayerJumper : MonoBehaviour
+    public class PlayerDoubleClick : MonoBehaviour
     {
         [SerializeField] private Player player;
         [SerializeField] private new Rigidbody rigidbody;
@@ -18,8 +19,22 @@ namespace _Scripts.Players
 
         private void OnDoubleClick()
         {
-            if (player.GetPlayerCollision().IsPlayerTouchGround())
-                Jump();
+            switch (player.GetPlayerMover().GetPlayerMoveType())
+            {
+                case PlayerMoveType.Run:
+                {
+                    if (player.GetPlayerCollision().IsPlayerTouchGround())
+                        Jump();
+                }
+                    break;
+                case PlayerMoveType.Fly:
+                {
+                    print("Fly double click!");
+                }
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
         }
 
 

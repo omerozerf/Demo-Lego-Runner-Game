@@ -6,7 +6,7 @@ namespace _Scripts.Players
     public class Player : MonoBehaviour
     {
         [SerializeField] private PlayerMover playerMover;
-        [SerializeField] private PlayerJumper playerJumper;
+        [FormerlySerializedAs("playerJumper")] [SerializeField] private PlayerDoubleClick playerDoubleClick;
         [SerializeField] private PlayerCollision playerCollision;
         [SerializeField] private PlayerLegoPicker playerLegoPicker;
         [SerializeField] private PlayerLegoBreaker playerLegoBreaker;
@@ -25,9 +25,9 @@ namespace _Scripts.Players
         }
 
 
-        public PlayerJumper GetPlayerJumper()
+        public PlayerDoubleClick GetPlayerJumper()
         {
-            return playerJumper;
+            return playerDoubleClick;
         }
 
 
